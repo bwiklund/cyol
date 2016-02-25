@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby -I.
+
+require "interpreter.rb"
+require "readline"
+
+interpreter = Interpreter.new
+
+if file = ARGV.first
+  interpreter.eval File.read(file)
+
+else
+  puts "Awesome REPL."
+
+  loop do
+    line = Readline::readline(">> ")
+    Readline::HISTORY.push(line)
+    value = interpreter.eval(line)
+    puts "=> #{value.ruby_value.inspect}"
+  end
+end

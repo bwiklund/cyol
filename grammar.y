@@ -101,7 +101,7 @@ rule
   ;
 
   SetConstant:
-    CONSTANT "=" Expression {result = SetConstantNode.new(val]0], val[2])}
+    CONSTANT "=" Expression {result = SetConstantNode.new(val[0], val[2])}
   ;
 
   GetLocal:

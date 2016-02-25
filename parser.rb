@@ -601,7 +601,7 @@ module_eval(<<'.,.,', 'grammar.y', 99)
 
 module_eval(<<'.,.,', 'grammar.y', 103)
   def _reduce_45(val, _values, result)
-    result = SetConstantNode.new(val]0], val[2])
+    result = SetConstantNode.new(val[0], val[2])
     result
   end
 .,.,

@@ -5,11 +5,11 @@ class Nodes < Struct.new(:nodes)
   end
 end
 
-class LiteralNode < String.new(:value); end
+class LiteralNode < Struct.new(:value); end
 
 class NumberNode < LiteralNode; end
 
-class StringNode < LiternalNode; end
+class StringNode < LiteralNode; end
 
 class TrueNode < LiteralNode
   def initialize

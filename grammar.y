@@ -1,6 +1,7 @@
 class Parser
 
 token IF
+token WHILE
 token DEF
 token CLASS
 token NEWLINE
@@ -49,6 +50,7 @@ rule
   | Def
   | Class
   | If
+  | While
   | '(' Expression ')' {result = val[1]}
   ;
 
@@ -133,6 +135,10 @@ rule
 
   If:
     IF Expression Block {result = IfNode.new(val[1], val[2])}
+  ;
+
+  While:
+    WHILE Expression Block {result = WhileNode.new(val[1], val[2])}
   ;
 end
 

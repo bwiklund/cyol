@@ -1,6 +1,6 @@
 class Lexer
 
-  KEYWORDS = ["def", "class", "if", "true", "false", "nil"]
+  KEYWORDS = ["def", "class", "if", "while", "true", "false", "nil"]
 
   def tokenize(code)
     code.chomp!
@@ -80,13 +80,3 @@ class Lexer
     tokens
   end
 end
-
-code = <<-CODE
-if 1:
-  if 2:
-    print("...")
-
-print "horay"
-CODE
-
-p Lexer.new.tokenize code
